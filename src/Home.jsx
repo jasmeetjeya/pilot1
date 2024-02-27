@@ -11,7 +11,7 @@ export const Home = () => {
 
 
       {/* Carousel Start */}
-      <div className="container-fluid p-0 pb-5 mb-5">
+      <div className="container-fluid p-0 pb-5 mb-1">
         <div id="header-carousel" className="carousel slide carousel-fade" data-ride="carousel">
           <ol className="carousel-indicators">
             <li data-target="#header-carousel" data-slide-to={0} className="active" />
@@ -56,14 +56,14 @@ export const Home = () => {
       
       <div>
         {/* About Start */}
-        <div className="container-fluid py-5">
-          <div className="container py-5">
+        <div className="container-fluid py-2">
+          <div className="container py-2">
             <div className="row align-items-center">
               <div className="col-lg-5">
-                <img className="img-fluid rounded mb-4 mb-lg-0" src="img/about.jpg" alt="" />
+                <img className="img-fluid rounded mb-2 mb-lg-0" src="img/about.jpg" alt="" />
               </div>
               <div className="col-lg-7">
-                <div className="text-left mb-4">
+                <div className="text-left mb-2">
                   <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>About Us</h5>
                   <h1>Innovative Way To Learn</h1>
                 </div>
@@ -75,9 +75,9 @@ export const Home = () => {
         </div>
         {/* About End */}
         {/* Category Start */}
-        <div className="container-fluid py-5">
-          <div className="container pt-5 pb-3">
-            <div className="text-center mb-5">
+        <div className="container-fluid py-3">
+          <div className="container pt-4 pb-3">
+            <div className="text-center mb-2">
               <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Subjects</h5>
               <h1>Explore Top Subjects</h1>
             </div>
@@ -160,9 +160,9 @@ export const Home = () => {
         {/* Category End */}
       </div>
       {/* Courses Start */}
-      <div className="container-fluid py-5">
-        <div className="container py-5">
-          <div className="text-center mb-5">
+      <div className="container-fluid py-2">
+        <div className="container py-2">
+          <div className="text-center mb-2">
             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Courses</h5>
             <h1>Our Popular Courses</h1>
           </div>
@@ -280,10 +280,10 @@ export const Home = () => {
       </div>
       {/* Courses End */}
        {/* Registration Start */}
-       <div className="container-fluid bg-registration py-5" style={{margin: '90px 0'}}>
-        <div className="container py-5">
+       <div className="container-fluid bg-registration py-2" style={{margin: '90px 0'}}>
+        <div className="container py-2">
           <div className="row align-items-center">
-            <div className="col-lg-7 mb-5 mb-lg-0">
+            <div className="col-lg-7 mb-2 mb-lg-0">
               <div className="mb-4">
                 <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Need Any Courses</h5>
                 <h1 className="text-white">30% Off For New Students</h1>
@@ -331,9 +331,9 @@ export const Home = () => {
       {/* Registration End */}
 
       {/* Team Start */}
-      <div className="container-fluid py-5">
-        <div className="container pt-5 pb-3">
-          <div className="text-center mb-5">
+      <div className="container-fluid py-2">
+        <div className="container pt-1 pb-1">
+          <div className="text-center mb-2">
             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Teachers</h5>
             <h1>Meet Our Teachers</h1>
           </div>
@@ -408,9 +408,9 @@ export const Home = () => {
       {/* Team End */}
 
       {/* Testimonial Start */}
-      <div className="container-fluid py-5">
-        <div className="container py-5">
-          <div className="text-center mb-5">
+      <div className="container-fluid py-2">
+        <div className="container py-2">
+          <div className="text-center mb-2">
             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Testimonial</h5>
             <h1>What Say Our Students</h1>
           </div>
