@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar'
 function LoginForm() {
   const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,8 +17,8 @@ function LoginForm() {
         },
         body: JSON.stringify({ password, email, phone }),
       });
-
-      if (!response.ok) {
+      console.log(response)
+      if (response.ok) {
         throw new Error('Login failed');
 
       }
@@ -55,10 +56,12 @@ function LoginForm() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h2>Login</h2>
+          <h2 className='text-center'>Login</h2>
           {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
           {successMessage && <div className="alert alert-success">{successMessage}</div>}
           <form onSubmit={handleLogin}>
@@ -97,6 +100,7 @@ function LoginForm() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
