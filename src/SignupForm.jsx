@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Footer } from './Footer';
 function SignupForm() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -48,7 +49,7 @@ function SignupForm() {
         setErrorMessage('');
       } else {
         throw new Error('JWT token not found in response');
-        
+
       }
 
     } catch (error) {
@@ -78,8 +79,8 @@ function SignupForm() {
           <div className="col-lg-3 text-right">
             <div className="d-inline-flex align-items-center">
               <div className="d-inline-flex align-items-center justify-content-end">
-                <a className="btn btn-primary py-2 px-4 ml-2 " href="">Login</a>
-                <a className="btn btn-primary py-2 px-4 ml-2 " href="">Signup</a>
+                <Link to="/Loginform" className="btn btn-primary py-2 px-4 ml-2 " >Login</Link>
+                <Link to="/Signupform" className="btn btn-primary py-2 px-4 ml-2 ">Signup</Link>
               </div>
             </div>
           </div>
@@ -98,13 +99,13 @@ function SignupForm() {
                 <span className="navbar-toggler-icon" />
               </button>
               <div className="collapse navbar-collapse justify-content-center" id="navbarCollapse">
-              <div className="navbar-nav py-0">
-                    <Link to="/" className="nav-item nav-link active">Home</Link>
-                    <Link to="/about" className="nav-item nav-link">About</Link>
-                    <Link to="/Courses" className="nav-item nav-link">Courses</Link>
-                    <Link to="/Teachers" className="nav-item nav-link">Teachers</Link>
-                    <Link to="/Contact" className="nav-item nav-link">Contact</Link>
-                  </div>
+                <div className="navbar-nav py-0">
+                  <Link to="/" className="nav-item nav-link active">Home</Link>
+                  <Link to="/about" className="nav-item nav-link">About</Link>
+                  <Link to="/Courses" className="nav-item nav-link">Courses</Link>
+                  <Link to="/Teachers" className="nav-item nav-link">Trainers</Link>
+                  <Link to="/Contact" className="nav-item nav-link">Contact</Link>
+                </div>
               </div>
             </nav>
           </div>
@@ -117,7 +118,7 @@ function SignupForm() {
           <div className="d-flex flex-column justify-content-center" style={{ minHeight: '300px' }}>
             <h3 className="display-4 text-white text-uppercase">Signup</h3>
             <div className="d-inline-flex text-white">
-              <p className="m-0 text-uppercase"><a className="text-white" href>Home</a></p>
+              <p className="m-0 text-uppercase"><Link to='/' className="text-white">Home</Link></p>
               <i className="fa fa-angle-double-right pt-1 px-3" />
               <p className="m-0 text-uppercase">Signup</p>
             </div>
@@ -125,7 +126,7 @@ function SignupForm() {
         </div>
       </div>
       {/* Header End */}
-      {/* Contact Start */}
+
       <div className="container-fluid">
         <div className="container py-5">
           <div className="text-center mb-5">
@@ -136,79 +137,75 @@ function SignupForm() {
             <div className="col-lg-8">
               <div className="contact-form bg-secondary rounded p-5">
                 <div id="success" />
-                  {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-                  {successMessage && <div className="alert alert-success">{successMessage}</div>}
-                  <form onSubmit={handleSubmit}>
-                    <div className="control-group">
-                      <label>First Name:</label>
-                      <input
-                        type="text"
-                        className="form-control border-0 p-2"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Last Name:</label>
-                      <input
-                        type="text"
-                        className="form-control border-0 p-2"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Email:</label>
-                      <input
-                        type="text"
-                        className="form-control border-0 p-2"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Phone:</label>
-                      <input
-                        type="text"
-                        className="form-control border-0 p-2"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Password:</label>
-                      <input
-                        type="password"
-                        className="form-control border-0 p-2"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div class="text-center">
+                {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+                {successMessage && <div className="alert alert-success">{successMessage}</div>}
+                <form onSubmit={handleSubmit}>
+                  <div className="control-group">
+                    <label>First Name:</label>
+                    <input
+                      type="text"
+                      className="form-control border-0 p-2"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Last Name:</label>
+                    <input
+                      type="text"
+                      className="form-control border-0 p-2"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Email:</label>
+                    <input
+                      type="text"
+                      className="form-control border-0 p-2"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Phone:</label>
+                    <input
+                      type="text"
+                      className="form-control border-0 p-2"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Password:</label>
+                    <input
+                      type="password"
+                      className="form-control border-0 p-2"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div class="text-center">
                     <button type="submit" className="btn btn-primary py-3 px-5">Signup</button>
-                    </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-
         </div>
 
-
-        {/* Contact End */}
-
-
       </div>
+      <Footer />
     </div>
   );
 }

@@ -22,12 +22,12 @@ export const Teachers = () => {
               </div>
             </div>
             <div className="col-lg-3 text-right">
-                <div className="d-inline-flex align-items-center">
-                    <div className="d-inline-flex align-items-center justify-content-end">
-                        <a className="btn btn-primary py-2 px-4 ml-2 " href="">Login</a>
-                        <a className="btn btn-primary py-2 px-4 ml-2 " href="">Signup</a>
-                    </div>
+              <div className="d-inline-flex align-items-center">
+                <div className="d-inline-flex align-items-center justify-content-end">
+                  <Link to="/Loginform" className="btn btn-primary py-2 px-4 ml-2 " >Login</Link>
+                  <Link to="/Signupform" className="btn btn-primary py-2 px-4 ml-2 ">Signup</Link>
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -45,10 +45,10 @@ export const Teachers = () => {
                 </button>
                 <div className="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                   <div className="navbar-nav py-0">
-                  <Link to="/" className="nav-item nav-link">Home</Link>
+                    <Link to="/" className="nav-item nav-link">Home</Link>
                     <Link to="/about" className="nav-item nav-link">About</Link>
                     <Link to="/Courses" className="nav-item nav-link">Courses</Link>
-                    <Link to="/Teachers" className="nav-item nav-link active">Teachers</Link>
+                    <Link to="/Teachers" className="nav-item nav-link active">Trainers</Link>
                     <Link to="/Contact" className="nav-item nav-link">Contact</Link>
                   </div>
                 </div>
@@ -57,14 +57,14 @@ export const Teachers = () => {
           </div>
         </div>
         {/* Header Start */}
-        <div className="container-fluid page-header" style={{marginBottom: '90px'}}>
+        <div className="container-fluid page-header" style={{ marginBottom: '90px' }}>
           <div className="container">
-            <div className="d-flex flex-column justify-content-center" style={{minHeight: '300px'}}>
-              <h3 className="display-4 text-white text-uppercase">Teachers</h3>
+            <div className="d-flex flex-column justify-content-center" style={{ minHeight: '300px' }}>
+              <h3 className="display-4 text-white text-uppercase">Trainers</h3>
               <div className="d-inline-flex text-white">
                 <p className="m-0 text-uppercase"><a className="text-white" href>Home</a></p>
                 <i className="fa fa-angle-double-right pt-1 px-3" />
-                <p className="m-0 text-uppercase">Teachers</p>
+                <p className="m-0 text-uppercase">Trainers</p>
               </div>
             </div>
           </div>
@@ -77,8 +77,8 @@ export const Teachers = () => {
       <div className="container-fluid py-5">
         <div className="container pt-5 pb-3">
           <div className="text-center mb-5">
-            <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Teachers</h5>
-            <h1>Meet Our Teachers</h1>
+            <h5 className="text-primary text-uppercase mb-3" style={{ letterSpacing: '5px' }}>Trainers</h5>
+            <h1>Meet Our Trainers</h1>
           </div>
           <div className="row">
             <div className="col-md-6 col-lg-3 text-center team mb-4">
@@ -212,7 +212,7 @@ export const Teachers = () => {
           </div>
         </div>
       </div>
-<Footer/>
+      <Footer />
     </div>
   )
 }

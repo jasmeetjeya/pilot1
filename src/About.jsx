@@ -20,13 +20,13 @@ export const About = () => {
             </div>
           </div>
           <div className="col-lg-3 text-right">
-                <div className="d-inline-flex align-items-center">
-                    <div className="d-inline-flex align-items-center justify-content-end">
-                        <a className="btn btn-primary py-2 px-4 ml-2 " href="">Login</a>
-                        <a className="btn btn-primary py-2 px-4 ml-2 " href="">Signup</a>
-                    </div>
-                </div>
+            <div className="d-inline-flex align-items-center">
+              <div className="d-inline-flex align-items-center justify-content-end">
+                <Link to="/Loginform" className="btn btn-primary py-2 px-4 ml-2 " >Login</Link>
+                <Link to="/Signupform" className="btn btn-primary py-2 px-4 ml-2 ">Signup</Link>
+              </div>
             </div>
+          </div>
         </div>
       </div>
       {/* Topbar End */}
@@ -46,7 +46,7 @@ export const About = () => {
                   <Link to="/" className="nav-item nav-link">Home</Link>
                   <Link to="/about" className="nav-item nav-link active">About</Link>
                   <Link to="/Courses" className="nav-item nav-link">Courses</Link>
-                  <Link to="/Teachers" className="nav-item nav-link">Teachers</Link>
+                  <Link to="/Teachers" className="nav-item nav-link">Trainers</Link>
                   <Link to="/Contact" className="nav-item nav-link">Contact</Link>
 
                 </div>

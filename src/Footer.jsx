@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -22,13 +23,12 @@ export const Footer = () => {
                   </div>
                 </div>
                 <div className="col-md-6 mb-5">
-                  <h5 className="text-primary text-uppercase mb-4" style={{letterSpacing: '5px'}}>Our Courses</h5>
+                  <h5 className="text-primary text-uppercase mb-4" style={{letterSpacing: '5px'}}>Explore</h5>
                   <div className="d-flex flex-column justify-content-start">
-                    <a className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />Web Design</a>
-                    <a className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />Apps Design</a>
-                    <a className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />Marketing</a>
-                    <a className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />Research</a>
-                    <a className="text-white" href="#"><i className="fa fa-angle-right mr-2" />SEO</a>
+                    <Link to='/courses' className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />Courses</Link>
+                    <Link to='/teachers' className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />Trainer</Link>
+                    <Link to='/contact' className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />Contact</Link>
+                    <Link to='/about' className="text-white mb-2" href="#"><i className="fa fa-angle-right mr-2" />About</Link>
                   </div>
                 </div>
               </div>

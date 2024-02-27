@@ -46,7 +46,7 @@ export const Navbar = () => {
                     <Link to="/" className="nav-item nav-link active">Home</Link>
                     <Link to="/about" className="nav-item nav-link">About</Link>
                     <Link to="/course" className="nav-item nav-link">Courses</Link>
-                    <Link to="/teacher" className="nav-item nav-link">Teachers</Link>
+                    <Link to="/teacher" className="nav-item nav-link">Trainers</Link>
                     <Link to="/Contact" className="nav-item nav-link">Contact</Link>
 
                   </div>
