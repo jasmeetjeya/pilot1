@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+
 export const Navbar = () => {
-  
   return (
     <div>
-      <div >
+      <div>
         <div className="container-fluid d-none d-lg-block">
           <div className="row align-items-center py-4 px-xl-5">
             <div className="col-lg-3">
@@ -32,7 +31,7 @@ export const Navbar = () => {
         </div>
         {/* Topbar End */}
         {/* Navbar Start */}
-        <div >
+        <div className="container-fluid">
           <div className="row border-top px-xl-5">
             <div className="col-lg-12">
               <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
