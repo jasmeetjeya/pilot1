@@ -8,7 +8,7 @@ function AddTrainerForm() {
     Email: '',
     Phone: '',
     Password: '',
-    Experience: '',
+    Experince: '',
     CoursesList: [],
     Permissions: []
   });
@@ -139,8 +139,8 @@ function AddTrainerForm() {
                   <input type="password" id="Password" name="Password" value={formData.Password} onChange={handleChange} className="form-control" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="Experience">Experience:</label>
-                  <input type="text" id="Experience" name="Experience" value={formData.Experience} onChange={handleChange} className="form-control" />
+                  <label htmlFor="Experince">Experince:</label>
+                  <input type="text" id="Experince" name="Experince" value={formData.Experince} onChange={handleChange} className="form-control" />
                 </div>
                 <div className="form-group">
                   <label>Courses List:</label><br />
@@ -204,7 +204,7 @@ export default AddTrainerForm;
 //     Email: '',
 //     Phone: '',
 //     Password: '',
-//     Experience: '',
+//     Experince: '',
 //     CoursesList: [],
 //     Permissions: ['Read', 'Write']
 //   });
@@ -256,8 +256,8 @@ export default AddTrainerForm;
 //           <input type="password" id="Password" name="Password" value={trainerData.Password} onChange={handleChange} className="form-control" required />
 //         </div>
 //         <div className="form-group">
-//           <label htmlFor="Experience">Experience:</label>
-//           <input type="text" id="Experience" name="Experience" value={trainerData.Experience} onChange={handleChange} className="form-control" required />
+//           <label htmlFor="Experince">Experince:</label>
+//           <input type="text" id="Experince" name="Experince" value={trainerData.Experince} onChange={handleChange} className="form-control" required />
 //         </div>
 //         <div className="form-group">
 //           <label htmlFor="CoursesList">Courses List:</label>
