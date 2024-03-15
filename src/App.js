@@ -8,6 +8,11 @@ import {Teachers} from './Teachers';
 import { Contact } from './Contact';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
+import Admin from './Admin';
+import AdminPanel from './AdminPanel';
+import AddCourseForm from './AddCourseForm';
+import GetCoursesForm from './GetCourseForm';
+import AddTrainerForm from './AddTrainerForm';
 function App() {
   return (
     
@@ -21,6 +26,12 @@ function App() {
         <Route path='/Contact'Component={Contact}exact/>
         <Route path='/LoginForm'Component={LoginForm}exact/>
         <Route path='/SignupForm'Component={SignupForm}exact/>
+        <Route path='/Admin' Component={Admin}exact/>
+        <Route path='/AdminPanel' Component={AdminPanel}exact/>
+        <Route path='/AddCourseForm' Component={AddCourseForm}exact/>
+        <Route path='/GetCourseForm' Component={GetCoursesForm}exact/>
+        <Route path='/AddTrainerForm' Component={AddTrainerForm}exact/>
+
         
       </Routes>
       
