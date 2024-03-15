@@ -21,7 +21,7 @@
 //         if (!response.ok) {
 //           throw new Error('Failed to fetch courses');
 //         }
-        
+
 //         const data = await response.json();
 //         setCourses(data);
 //         setErrorMessage('');
@@ -79,7 +79,7 @@ function GetCoursesForm() {
         if (!response.ok) {
           throw new Error('Failed to fetch courses');
         }
-        
+
         const data = await response.json();
         setCourses(data);
         setErrorMessage('');
