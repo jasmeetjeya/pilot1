@@ -92,6 +92,16 @@ function GetCoursesForm() {
     fetchCourses();
   }, []);
 
+  const handleUpdate = async (courseId) => {
+    // Implement your update logic here
+    console.log('Update course with ID:', courseId);
+  };
+
+  const handleDelete = async (courseId) => {
+    // Implement your delete logic here
+    console.log('Delete course with ID:', courseId);
+  };
+
   return (
     <div className="container">
       <h2 className="text-center">Get Courses</h2>
@@ -107,6 +117,10 @@ function GetCoursesForm() {
                 <p className="card-text"><strong>End Date:</strong> {course.Edate}</p>
                 <p className="card-text"><strong>Cost:</strong> {course.Cost}</p>
                 <p className="card-text"><strong>Discount:</strong> {course.Discount}</p>
+                <div className="d-flex justify-content-between mt-3">
+                  <button className="btn btn-success" onClick={() => handleUpdate(course._id)}>Update</button>
+                  <button className="btn btn-danger" onClick={() => handleDelete(course._id)}>Delete</button>
+                </div>
               </div>
             </div>
           </div>
@@ -117,3 +131,4 @@ function GetCoursesForm() {
 }
 
 export default GetCoursesForm;
+
