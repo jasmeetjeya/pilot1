@@ -32,7 +32,7 @@ export default function AdminPanel() {
                   <div className="navbar-nav py-0 d-inline-flex align-items-center justify-content-end">
                     <Link to="/AdminPanel" className="nav-item nav-link active spaced ">Add Course</Link>
                     <Link to="/AddTrainerForm" className="nav-item nav-link spaced">Add Trainers</Link>
-                    <Link to="/Courses" className="nav-item nav-link spaced">Images </Link>
+                    <Link to="/UpdateCourseForm" className="nav-item nav-link spaced">Images </Link>
                   </div>
                 </div>
               </nav>

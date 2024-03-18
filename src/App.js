@@ -13,6 +13,7 @@ import AdminPanel from './AdminPanel';
 import AddCourseForm from './AddCourseForm';
 import GetCoursesForm from './GetCourseForm';
 import AddTrainerForm from './AddTrainerForm';
+import UpdateCourseForm from './UpdateCourseForm';
 function App() {
   return (
     
@@ -31,6 +32,8 @@ function App() {
         <Route path='/AddCourseForm' Component={AddCourseForm}exact/>
         <Route path='/GetCourseForm' Component={GetCoursesForm}exact/>
         <Route path='/AddTrainerForm' Component={AddTrainerForm}exact/>
+        <Route path='/UpdateCourseForm' Component={UpdateCourseForm}exact/>
+
 
         
       </Routes>

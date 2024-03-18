@@ -1,106 +1,79 @@
-// import React, { useState, useEffect } from 'react';
-
-// function GetCoursesForm() {
-//   const [courses, setCourses] = useState([]);
-//   const [errorMessage, setErrorMessage] = useState('');
-
-//   useEffect(() => {
-//     const fetchCourses = async () => {
-//       try {
-//         // Retrieve token from localStorage
-//         const Token = localStorage.getItem('Token');
-
-//         const response = await fetch('https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/get-courses', {
-//           method: 'GET',
-//           headers: {
-//             'Content-Type': 'application/json',
-//             'Authorization': `Bearer ${Token}` // Include token in the Authorization header
-//           }
-//         });
-
-//         if (!response.ok) {
-//           throw new Error('Failed to fetch courses');
-//         }
-
-//         const data = await response.json();
-//         setCourses(data);
-//         setErrorMessage('');
-//       } catch (error) {
-//         setErrorMessage(error.message);
-//         console.error('Error fetching courses:', error);
-//       }
-//     };
-
-//     fetchCourses();
-//   }, []);
-
-//   return (
-//     <div>
-//       <h2>Get Courses</h2>
-//       {errorMessage && <div>{errorMessage}</div>}
-//       <div className="card-container">
-//         {courses.map(course => (
-//           <div className="card" key={course._id}>
-//             <h3>{course.CourseName}</h3>
-//             <p><strong>Duration:</strong> {course.Duration}</p>
-//             <p><strong>Start Date:</strong> {course.Sdate}</p>
-//             <p><strong>End Date:</strong> {course.Edate}</p>
-//             <p><strong>Cost:</strong> {course.Cost}</p>
-//             <p><strong>Discount:</strong> {course.Discount}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default GetCoursesForm;
-
 import React, { useState, useEffect } from 'react';
 
 function GetCoursesForm() {
   const [courses, setCourses] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        // Retrieve token from localStorage
-        const Token = localStorage.getItem('Token');
+  // Function to fetch courses from the API
+  const fetchCourses = async () => {
+    try {
+      // Retrieve token from localStorage
+      const token = localStorage.getItem('Token');
 
-        const response = await fetch('https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/get-courses', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${Token}` // Include token in the Authorization header
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch courses');
+      const response = await fetch('https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/get-courses', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         }
+      });
 
-        const data = await response.json();
-        setCourses(data);
-        setErrorMessage('');
-      } catch (error) {
-        setErrorMessage(error.message);
-        console.error('Error fetching courses:', error);
+      if (!response.ok) {
+        throw new Error('Failed to fetch courses');
       }
-    };
 
+      const data = await response.json();
+      setCourses(data);
+      setErrorMessage('');
+    } catch (error) {
+      setErrorMessage(error.message);
+      console.error('Error fetching courses:', error);
+    }
+  };
+
+  // Function to handle update course action
+  const handleUpdate = async (course) => {
+    // Redirect to Update Course form with course object as parameter
+    window.location.href = `/UpdateCourseForm?course=${encodeURIComponent(JSON.stringify(course))}`;
+  };
+  // Function to handle delete course action
+const handleDelete = async (courseId, courseName) => {
+  // Display confirmation alert before deleting
+  const confirmDelete = window.confirm(`Are you sure you want to delete the course "${courseName}"?`);
+
+  if (confirmDelete) {
+    try {
+      // Retrieve token from localStorage
+      const token = localStorage.getItem('Token');
+
+      const response = await fetch(`https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/delete-course/${courseName}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete course');
+      }
+
+      console.log('Course deleted successfully:', courseName);
+
+      // Fetch courses again after successful deletion
+      fetchCourses();
+    } catch (error) {
+      console.error('Error deleting course:', error);
+    }
+  } else {
+    console.log('Delete operation cancelled');
+  }
+};
+
+
+  useEffect(() => {
+    // Fetch courses on component mount
     fetchCourses();
   }, []);
-
-  const handleUpdate = async (courseId) => {
-    // Implement your update logic here
-    console.log('Update course with ID:', courseId);
-  };
-
-  const handleDelete = async (courseId) => {
-    // Implement your delete logic here
-    console.log('Delete course with ID:', courseId);
-  };
 
   return (
     <div className="container">
@@ -118,8 +91,8 @@ function GetCoursesForm() {
                 <p className="card-text"><strong>Cost:</strong> {course.Cost}</p>
                 <p className="card-text"><strong>Discount:</strong> {course.Discount}</p>
                 <div className="d-flex justify-content-between mt-3">
-                  <button className="btn btn-success" onClick={() => handleUpdate(course._id)}>Update</button>
-                  <button className="btn btn-danger" onClick={() => handleDelete(course._id)}>Delete</button>
+                  <button className="btn btn-success" onClick={() => handleUpdate(course)}>Update</button>
+                  <button className="btn btn-danger" onClick={() => handleDelete(course._id, course.CourseName)}>Delete</button>
                 </div>
               </div>
             </div>
@@ -132,3 +105,109 @@ function GetCoursesForm() {
 
 export default GetCoursesForm;
 
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+
+// function GetCoursesForm() {
+//   const [courses, setCourses] = useState([]);
+//   const [errorMessage, setErrorMessage] = useState('');
+
+//   useEffect(() => {
+//     const fetchCourses = async () => {
+//       try {
+//         // Retrieve token from localStorage
+//         const token = localStorage.getItem('Token');
+
+//         const response = await fetch('http://localhost:4522/v1/admin/get-courses', {
+//           method: 'GET',
+//           headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization': `Bearer ${token}`
+//           }
+//         });
+
+//         if (!response.ok) {
+//           throw new Error('Failed to fetch courses');
+//         }
+
+//         const data = await response.json();
+//         setCourses(data);
+//         setErrorMessage('');
+//       } catch (error) {
+//         setErrorMessage(error.message);
+//         console.error('Error fetching courses:', error);
+//       }
+//     };
+
+//     fetchCourses(); // Call the fetchCourses function
+//   }, []); // Empty dependency array means this effect runs once after the initial render
+
+//   const handleDelete = async (courseName) => {
+//     // Display confirmation alert before deleting
+//     const confirmDelete = window.confirm(`Are you sure you want to delete the course "${courseName}"?`);
+
+//     if (confirmDelete) {
+//       try {
+//         // Retrieve token from localStorage
+//         const token = localStorage.getItem('Token');
+
+//         const response = await fetch(`http://localhost:4522/v1/admin/delete-course/${encodeURIComponent(courseName)}`, {
+//           method: 'DELETE',
+//           headers: {
+//             'Authorization': `Bearer ${token}`
+//           }
+//         });
+
+//         if (!response.ok) {
+//           throw new Error('Failed to delete course');
+//         }
+
+//         console.log('Course deleted successfully:', courseName);
+
+//         // After deleting, fetch courses again to update the list
+//         fetchCourses();
+//       } catch (error) {
+//         console.error('Error deleting course:', error);
+//       }
+//     } else {
+//       console.log('Delete operation cancelled');
+//     }
+//   };
+
+//   const handleUpdate = (courseName) => {
+//     // Redirect to Update Course form with courseName parameter
+//     window.location.href = `/UpdateCourseForm?courseName=${encodeURIComponent(courseName)}`;
+//   };
+
+//   return (
+//     <div className="container">
+//       <h2 className="text-center">Get Courses</h2>
+//       {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+//       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+//         {courses.map(course => (
+//           <div className="col" key={course._id}>
+//             <div className="card bg-secondary m-3">
+//               <div className="card-body">
+//                 <h3 className="card-title text-primary">{course.CourseName}</h3>
+//                 <p className="card-text"><strong>Duration:</strong> {course.Duration}</p>
+//                 <p className="card-text"><strong>Start Date:</strong> {course.Sdate}</p>
+//                 <p className="card-text"><strong>End Date:</strong> {course.Edate}</p>
+//                 <p className="card-text"><strong>Cost:</strong> {course.Cost}</p>
+//                 <p className="card-text"><strong>Discount:</strong> {course.Discount}</p>
+//                 <div className="d-flex justify-content-between mt-3">
+//                   <button className="btn btn-success" onClick={() => handleUpdate(course.CourseName)}>Update</button>
+//                   <button className="btn btn-danger" onClick={() => handleDelete(course.CourseName)}>Delete</button>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default GetCoursesForm;
