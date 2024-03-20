@@ -33,9 +33,9 @@ function GetCoursesForm() {
   };
 
   // Function to handle update course action
-  const handleUpdate = async (course) => {
+  const handleUpdate = (CourseName) => {
     // Redirect to Update Course form with course object as parameter
-    window.location.href = `/UpdateCourseForm?course=${encodeURIComponent(JSON.stringify(course))}`;
+    window.location.href = `/UpdateCourseForm?courseName=${encodeURIComponent(CourseName)}`;
   };
 
   // Function to handle delete course action
@@ -97,7 +97,7 @@ function GetCoursesForm() {
                 <p className="card-text"><strong>Cost:</strong> {course.Cost}</p>
                 <p className="card-text"><strong>Discount:</strong> {course.Discount}</p>
                 <div className="d-flex justify-content-between mt-3">
-                  <button className="btn btn-success" onClick={() => handleUpdate(course)}>Update</button>
+                  <button className="btn btn-success" onClick={() => handleUpdate(course.CourseName)}>Update</button>
                   <button className="btn btn-danger" onClick={() => handleDelete(course.CourseName)}>Delete</button>
                 </div>
               </div>
