@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import GetTrainers from './GetTrainers';
 
 function AddTrainerForm() {
   const [courses, setCourses] = useState([]);
@@ -205,6 +206,7 @@ function AddTrainerForm() {
           </div>
         </div>
       </div>
+      <GetTrainers/>
     </div>
   );
 }

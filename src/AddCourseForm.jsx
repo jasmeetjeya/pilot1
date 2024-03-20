@@ -32,7 +32,7 @@ function AddCourseForm() {
       });
       const data = await response.json();
       console.log('Data added:', data);
-      
+      window.location.reload();
       // Reset form data or show success message
     } catch (error) {
       console.error('Error adding data:', error);

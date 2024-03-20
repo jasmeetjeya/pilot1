@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function GetCoursesForm() {
   const [courses, setCourses] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false); // State to track delete operation
 
   // Function to fetch courses from the API
   const fetchCourses = async () => {
@@ -36,39 +37,43 @@ function GetCoursesForm() {
     // Redirect to Update Course form with course object as parameter
     window.location.href = `/UpdateCourseForm?course=${encodeURIComponent(JSON.stringify(course))}`;
   };
+
   // Function to handle delete course action
-const handleDelete = async (courseId, courseName) => {
-  // Display confirmation alert before deleting
-  const confirmDelete = window.confirm(`Are you sure you want to delete the course "${courseName}"?`);
+  const handleDelete = async (courseName) => {
+    // Display confirmation alert before deleting
+    const confirmDelete = window.confirm(`Are you sure you want to delete the course "${courseName}"?`);
 
-  if (confirmDelete) {
-    try {
-      // Retrieve token from localStorage
-      const token = localStorage.getItem('Token');
+    if (confirmDelete) {
+      try {
+        setIsDeleting(true); // Set isDeleting to true to show preloader
 
-      const response = await fetch(`https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/delete-course/${courseName}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${token}`
+        // Retrieve token from localStorage
+        const token = localStorage.getItem('Token');
+
+        const response = await fetch(`https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/delete-course/${courseName}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to delete course');
         }
-      });
 
-      if (!response.ok) {
-        throw new Error('Failed to delete course');
+        console.log('Course deleted successfully:', courseName);
+
+        // Fetch courses again after successful deletion
+        fetchCourses();
+      } catch (error) {
+        console.error('Error deleting course:', error);
+      } finally {
+        setIsDeleting(false); // Reset isDeleting after delete operation is completed
       }
-
-      console.log('Course deleted successfully:', courseName);
-
-      // Fetch courses again after successful deletion
-      fetchCourses();
-    } catch (error) {
-      console.error('Error deleting course:', error);
+    } else {
+      console.log('Delete operation cancelled');
     }
-  } else {
-    console.log('Delete operation cancelled');
-  }
-};
-
+  };
 
   useEffect(() => {
     // Fetch courses on component mount
@@ -79,6 +84,7 @@ const handleDelete = async (courseId, courseName) => {
     <div className="container">
       <h2 className="text-center">Get Courses</h2>
       {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+      {isDeleting && <div className="text-center">Deleting...</div>} {/* Preloader */}
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {courses.map(course => (
           <div className="col" key={course._id}>
@@ -92,7 +98,7 @@ const handleDelete = async (courseId, courseName) => {
                 <p className="card-text"><strong>Discount:</strong> {course.Discount}</p>
                 <div className="d-flex justify-content-between mt-3">
                   <button className="btn btn-success" onClick={() => handleUpdate(course)}>Update</button>
-                  <button className="btn btn-danger" onClick={() => handleDelete(course._id, course.CourseName)}>Delete</button>
+                  <button className="btn btn-danger" onClick={() => handleDelete(course.CourseName)}>Delete</button>
                 </div>
               </div>
             </div>
@@ -104,6 +110,9 @@ const handleDelete = async (courseId, courseName) => {
 }
 
 export default GetCoursesForm;
+
+
+
 
 
 
