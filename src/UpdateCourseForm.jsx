@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -121,10 +121,10 @@ function UpdateCourseForm() {
 export default UpdateCourseForm;
 
 // import React, { useState, useEffect } from 'react';
-=======
+
 // import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
->>>>>>> 854c02d8cc6e9c72e4cfb99f46c1bf46768dee3f
+
 // import { useLocation } from 'react-router-dom';
 // function UpdateCourseForm() {
 
@@ -258,102 +258,102 @@ export default UpdateCourseForm;
 
 
 
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+// import React, { useState, useEffect } from 'react';
+// import { useLocation } from 'react-router-dom';
 
-function UpdateCourseForm() {
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const course = JSON.parse(decodeURIComponent(queryParams.get('course')));
+// function UpdateCourseForm() {
+//   const location = useLocation();
+//   const queryParams = new URLSearchParams(location.search);
+//   const course = JSON.parse(decodeURIComponent(queryParams.get('course')));
 
-  const initialFormData = {
-    CourseName: course.CourseName || '',
-    Duration: course.Duration || '',
-    Sdate: course.Sdate || '',
-    Edate: course.Edate || '',
-    Cost: course.Cost || '',
-    Discount: course.Discount || ''
-  };
+//   const initialFormData = {
+//     CourseName: course.CourseName || '',
+//     Duration: course.Duration || '',
+//     Sdate: course.Sdate || '',
+//     Edate: course.Edate || '',
+//     Cost: course.Cost || '',
+//     Discount: course.Discount || ''
+//   };
 
-  const [formData, setFormData] = useState(initialFormData);
-  const [errorMessage, setErrorMessage] = useState('');
+//   const [formData, setFormData] = useState(initialFormData);
+//   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const Token = localStorage.getItem('Token');
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const Token = localStorage.getItem('Token');
 
-      const response = await fetch(`https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/update-course/${course.CourseName}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${Token}`
-        },
-        body: JSON.stringify(formData)
-      });
+//       const response = await fetch(`https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/update-course/${course.CourseName}`, {
+//         method: 'PUT',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${Token}`
+//         },
+//         body: JSON.stringify(formData)
+//       });
 
-      if (!response.ok) {
-        throw new Error('Failed to update course');
-      }
+//       if (!response.ok) {
+//         throw new Error('Failed to update course');
+//       }
 
-      const data = await response.json();
-      console.log('Updated course data:', data);
-      setErrorMessage('');
-      // Optionally, show success message or redirect
-    } catch (error) {
-      setErrorMessage('Failed to update course. Please try again.');
-      console.error('Error updating course:', error);
-    }
-  };
+//       const data = await response.json();
+//       console.log('Updated course data:', data);
+//       setErrorMessage('');
+//       // Optionally, show success message or redirect
+//     } catch (error) {
+//       setErrorMessage('Failed to update course. Please try again.');
+//       console.error('Error updating course:', error);
+//     }
+//   };
 
-  return (
-    <>
-      <div className="container py-5">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <div className="contact-form bg-secondary rounded p-5">
-              <h2 className="text-center">Update Course</h2>
-              {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="CourseName">Course Name:</label>
-                  <input type="text" id="CourseName" name="CourseName" value={formData.CourseName} onChange={handleChange} className="form-control" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Duration">Duration:</label>
-                  <input type="text" id="Duration" name="Duration" value={formData.Duration} onChange={handleChange} className="form-control" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Sdate">Start Date:</label>
-                  <input type="text" id="Sdate" name="Sdate" value={formData.Sdate} onChange={handleChange} className="form-control" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Edate">End Date:</label>
-                  <input type="text" id="Edate" name="Edate" value={formData.Edate} onChange={handleChange} className="form-control" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Cost">Cost:</label>
-                  <input type="text" id="Cost" name="Cost" value={formData.Cost} onChange={handleChange} className="form-control" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Discount">Discount:</label>
-                  <input type="text" id="Discount" name="Discount" value={formData.Discount} onChange={handleChange} className="form-control" />
-                </div>
-                <button type="submit" className="btn btn-primary">Update</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
+//   return (
+//     <>
+//       <div className="container py-5">
+//         <div className="row justify-content-center">
+//           <div className="col-lg-8">
+//             <div className="contact-form bg-secondary rounded p-5">
+//               <h2 className="text-center">Update Course</h2>
+//               {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+//               <form onSubmit={handleSubmit}>
+//                 <div className="form-group">
+//                   <label htmlFor="CourseName">Course Name:</label>
+//                   <input type="text" id="CourseName" name="CourseName" value={formData.CourseName} onChange={handleChange} className="form-control" />
+//                 </div>
+//                 <div className="form-group">
+//                   <label htmlFor="Duration">Duration:</label>
+//                   <input type="text" id="Duration" name="Duration" value={formData.Duration} onChange={handleChange} className="form-control" />
+//                 </div>
+//                 <div className="form-group">
+//                   <label htmlFor="Sdate">Start Date:</label>
+//                   <input type="text" id="Sdate" name="Sdate" value={formData.Sdate} onChange={handleChange} className="form-control" />
+//                 </div>
+//                 <div className="form-group">
+//                   <label htmlFor="Edate">End Date:</label>
+//                   <input type="text" id="Edate" name="Edate" value={formData.Edate} onChange={handleChange} className="form-control" />
+//                 </div>
+//                 <div className="form-group">
+//                   <label htmlFor="Cost">Cost:</label>
+//                   <input type="text" id="Cost" name="Cost" value={formData.Cost} onChange={handleChange} className="form-control" />
+//                 </div>
+//                 <div className="form-group">
+//                   <label htmlFor="Discount">Discount:</label>
+//                   <input type="text" id="Discount" name="Discount" value={formData.Discount} onChange={handleChange} className="form-control" />
+//                 </div>
+//                 <button type="submit" className="btn btn-primary">Update</button>
+//               </form>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
 
-export default UpdateCourseForm;
+// export default UpdateCourseForm;
 
 
