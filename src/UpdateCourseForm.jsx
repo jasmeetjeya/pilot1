@@ -106,7 +106,9 @@ function UpdateCourseForm() {
                 <label htmlFor="Discount">Discount:</label>
                 <input type="text" id="Discount" name="Discount" value={formData.Discount} onChange={handleChange} className="form-control" />
               </div>
+              {/* <button type="submit" className="btn btn-primary">Update</button> */}
               <button type="submit" className="btn btn-primary">Update</button>
+
             </form>
           </div>
         </div>
