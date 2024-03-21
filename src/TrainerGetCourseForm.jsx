@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function GetCoursesForm() {
+function TrainerGetCourseForm() {
   const [courses, setCourses] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [isDeleting, setIsDeleting] = useState(false); // State to track delete operation
@@ -9,13 +9,13 @@ function GetCoursesForm() {
   const fetchCourses = async () => {
     try {
       // Retrieve token from localStorage
-      const token = localStorage.getItem('Token');
+      const token1 = localStorage.getItem('Token');
 
       const response = await fetch('https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/get-courses', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token1}`
         }
       });
 
@@ -48,12 +48,12 @@ function GetCoursesForm() {
         setIsDeleting(true); // Set isDeleting to true to show preloader
 
         // Retrieve token from localStorage
-        const token = localStorage.getItem('Token');
+        const token1 = localStorage.getItem('Token');
 
         const response = await fetch(`https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/delete-course/${courseName}`, {
           method: 'DELETE',
           headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token1}`
           }
         });
 
@@ -109,7 +109,7 @@ function GetCoursesForm() {
   );
 }
 
-export default GetCoursesForm;
+export default TrainerGetCourseForm;
 
 
 
@@ -120,7 +120,7 @@ export default GetCoursesForm;
 
 // import React, { useState, useEffect } from 'react';
 
-// function GetCoursesForm() {
+// function TrainerGetCourseForm() {
 //   const [courses, setCourses] = useState([]);
 //   const [errorMessage, setErrorMessage] = useState('');
 
@@ -219,4 +219,4 @@ export default GetCoursesForm;
 //   );
 // }
 
-// export default GetCoursesForm;
+// export default TrainerGetCourseForm;

@@ -15,6 +15,8 @@ import GetCoursesForm from './GetCourseForm';
 import AddTrainerForm from './AddTrainerForm';
 import UpdateCourseForm from './UpdateCourseForm';
 import GetTrainers from './GetTrainers';
+import Trainer from './Trainer';
+import TrainerPanel from './Trainerpanel';
 function App() {
   return (
     
@@ -35,6 +37,8 @@ function App() {
         <Route path='/AddTrainerForm' Component={AddTrainerForm}exact/>
         <Route path='/UpdateCourseForm' Component={UpdateCourseForm}exact/>
         <Route path='/GetTrainers' Component={GetTrainers}exact/>
+        <Route path='/Trainer' Component={Trainer}exact/>
+        <Route path='/TrainerPanel' Component={TrainerPanel}exact/>
 
 
         
