@@ -11,7 +11,7 @@ function TrainerGetCourseForm() {
       // Retrieve token from localStorage
       const token1 = localStorage.getItem('Token');
 
-      const response = await fetch('https://rz4gggsw-4522.inc1.devtunnels.ms/v1/admin/get-courses', {
+      const response = await fetch('https://rz4gggsw-4522.inc1.devtunnels.ms/v1/trainers/get-courses', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
