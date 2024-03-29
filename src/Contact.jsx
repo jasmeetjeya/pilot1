@@ -72,8 +72,8 @@ export const Contact = () => {
         </div>
         {/* Header End */}
         {/* Contact Start */}
-        <div className="container-fluid py-5">
-          <div className="container py-5">
+        <div className="container-fluid ">
+          <div className="container py-3">
             <div className="text-center mb-5">
               <h5 className="text-primary text-uppercase mb-3" style={{ letterSpacing: '5px' }}>Contact</h5>
               <h1>Contact For Any Query</h1>

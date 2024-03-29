@@ -76,8 +76,8 @@ export const Courses = () => {
       </div>
 
       {/* Category Start */}
-      <div className="container-fluid py-5">
-        <div className="container pt-5 pb-3">
+      <div className="container-fluid py-2">
+        <div className="container pt-2 pb-1">
           <div className="text-center mb-5">
             <h5 className="text-primary text-uppercase mb-3" style={{ letterSpacing: '5px' }}>Subjects</h5>
             <h1>Explore Top Subjects</h1>
@@ -162,8 +162,8 @@ export const Courses = () => {
 
 
       {/* Courses Start */}
-      <div className="container-fluid py-5">
-        <div className="container py-5">
+      <div className="container-fluid py-2">
+        <div className="container py-2">
           <div className="text-center mb-5">
             <h5 className="text-primary text-uppercase mb-3" style={{ letterSpacing: '5px' }}>Courses</h5>
             <h1>Our Popular Courses</h1>

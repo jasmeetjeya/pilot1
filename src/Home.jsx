@@ -104,8 +104,8 @@ export const Home = () => {
       
       <div>
         {/* About Start */}
-        <div className="container-fluid py-5">
-          <div className="container py-5">
+        <div className="container-fluid py-2">
+          <div className="container py-2">
             <div className="row align-items-center">
               <div className="col-lg-5">
                 <img className="img-fluid rounded mb-4 mb-lg-0" src="img/about.jpg" alt="" />
@@ -123,8 +123,8 @@ export const Home = () => {
         </div>
         {/* About End */}
         {/* Category Start */}
-        <div className="container-fluid py-5">
-          <div className="container pt-5 pb-3">
+        <div className="container-fluid py-2">
+          <div className="container pt-5 pb-2">
             <div className="text-center mb-5">
               <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Subjects</h5>
               <h1>Explore Top Subjects</h1>
@@ -208,7 +208,7 @@ export const Home = () => {
         {/* Category End */}
       </div>
       {/* Courses Start */}
-      <div className="container-fluid py-5">
+      <div className="container-fluid py-2">
         <div className="container py-5">
           <div className="text-center mb-5">
             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Courses</h5>
@@ -328,7 +328,7 @@ export const Home = () => {
       </div>
       {/* Courses End */}
        {/* Registration Start */}
-       <div className="container-fluid bg-registration py-5" style={{margin: '90px 0'}}>
+       <div className="container-fluid bg-registration py-5" style={{margin: '30px 0'}}>
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-7 mb-5 mb-lg-0">
@@ -379,49 +379,18 @@ export const Home = () => {
       {/* Registration End */}
 
       {/* Team Start */}
-      <div className="container-fluid py-5">
+      <div className="container-fluid py-2">
         <div className="container pt-5 pb-3">
           <div className="text-center mb-5">
             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Trainers</h5>
             <h1>Meet Our Trainers</h1>
           </div>
-          <div className="row">
-            <div className="col-md-6 col-lg-3 text-center team mb-4">
-              <div className="team-item rounded overflow-hidden mb-2">
-                <div className="team-img position-relative">
-                  <img className="img-fluid" src="img/team-1.jpg" alt="" />
-                  <div className="team-social">
-                    <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-twitter" /></a>
-                    <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-facebook-f" /></a>
-                    <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-linkedin-in" /></a>
-                  </div>
-                </div>
-                <div className="bg-secondary p-4">
-                  <h5>Jhon Doe</h5>
-                  <p className="m-0">Web Designer</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 text-center team mb-4">
+          <div className="row  justify-content-center align-items-center">
+           
+            <div className="col-md-6 col-lg-3 text-center team mb-4 ">
               <div className="team-item rounded overflow-hidden mb-2">
                 <div className="team-img position-relative">
                   <img className="img-fluid" src="img/team-2.jpg" alt="" />
-                  <div className="team-social">
-                    <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-twitter" /></a>
-                    <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-facebook-f" /></a>
-                    <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-linkedin-in" /></a>
-                  </div>
-                </div>
-                <div className="bg-secondary p-4">
-                  <h5>Jhon Doe</h5>
-                  <p className="m-0">Web Designer</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3 text-center team mb-4">
-              <div className="team-item rounded overflow-hidden mb-2">
-                <div className="team-img position-relative">
-                  <img className="img-fluid" src="img/team-3.jpg" alt="" />
                   <div className="team-social">
                     <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-twitter" /></a>
                     <a className="btn btn-outline-light btn-square mx-1" href="#"><i className="fab fa-facebook-f" /></a>
@@ -456,7 +425,7 @@ export const Home = () => {
       {/* Team End */}
 
       {/* Testimonial Start */}
-      <div className="container-fluid py-5">
+      {/* <div className="container-fluid py-5">
         <div className="container py-5">
           <div className="text-center mb-5">
             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>Testimonial</h5>
@@ -490,7 +459,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Testimonial End */}
 
 {/* 

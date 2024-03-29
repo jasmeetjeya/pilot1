@@ -97,7 +97,7 @@ function LoginForm() {
               </button>
               <div className="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                 <div className="navbar-nav py-0">
-                  <Link to="/" className="nav-item nav-link active">Home</Link>
+                  <Link to="/" className="nav-item nav-link ">Home</Link>
                   <Link to="/about" className="nav-item nav-link">About</Link>
                   <Link to="/Courses" className="nav-item nav-link">Courses</Link>
                   <Link to="/Teachers" className="nav-item nav-link">Trainers</Link>
@@ -110,7 +110,7 @@ function LoginForm() {
       </div>
 
       {/* Header Start */}
-      <div className="container-fluid page-header" style={{ marginBottom: '90px' }}>
+      <div className="container-fluid page-header" style={{ marginBottom: '30px' }}>
         <div className="container">
           <div className="d-flex flex-column justify-content-center" style={{ minHeight: '300px' }}>
             <h3 className="display-4 text-white text-uppercase">Login</h3>

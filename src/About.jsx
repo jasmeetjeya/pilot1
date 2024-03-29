@@ -71,8 +71,8 @@ export const About = () => {
         </div>
         {/* Header End */}
         {/* About Start */}
-        <div className="container-fluid py-5">
-          <div className="container py-5">
+        <div className="container-fluid py-2">
+          <div className="container py-2">
             <div className="row align-items-center">
               <div className="col-lg-5">
                 <img className="img-fluid rounded mb-4 mb-lg-0" src="img/about.jpg" alt="" />
@@ -143,7 +143,7 @@ export const About = () => {
       {/* Registration End */}
 
       {/* Testimonial Start */}
-      <div className="container-fluid py-5">
+      {/* <div className="container-fluid py-5">
         <div className="container py-5">
           <div className="text-center mb-5">
             <h5 className="text-primary text-uppercase mb-3" style={{ letterSpacing: '5px' }}>Testimonial</h5>
@@ -177,7 +177,7 @@ export const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Testimonial End */}
 
       <Footer />

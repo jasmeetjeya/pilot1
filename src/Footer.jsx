@@ -6,7 +6,7 @@ export const Footer = () => {
     <div>
       <div>
         {/* Footer Start */}
-        <div className="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style={{marginTop: '90px'}}>
+        <div className="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style={{marginTop: '30px'}}>
           <div className="row pt-5">
             <div className="col-lg-7 col-md-12">
               <div className="row">
